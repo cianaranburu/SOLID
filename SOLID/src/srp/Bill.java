@@ -13,7 +13,8 @@ public class Bill {
 	// Fakturaren totala kalkulatzen duen metodoa.
 	public void totalCalc() {
 		// Dedukzioa kalkulatu
-		billDeduction = (billAmount * deductionPercentage) / 100;
+		BillDeduction bd = new BillDeduction();
+		billDeduction = bd.calcBillDeduction(billAmount, deductionPercentage);
 		// VAT kalkulatzen dugu
 		Vat v = new Vat();
 		VAT = v.returnVAT(billAmount);
